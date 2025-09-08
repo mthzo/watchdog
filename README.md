@@ -108,6 +108,3 @@ Faça o commit das suas alterações (git commit -m 'feat: adicionando nova func
 Envie suas alterações (git push origin feature/minha-nova-feature).
 
 **Abra um Pull Request.**
-
-## Licença
-Este projeto está sob a licença MIT License.
