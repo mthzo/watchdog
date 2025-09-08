@@ -33,7 +33,7 @@ Certifique-se de ter o Python 3.6 ou superior instalado em seu sistema.
 
 1.  **Clone o repositório:**
     ```bash
-    git clone [https://github.com/mthzo/watchdog.git](https://github.com/mthzo/watchdog.git)
+    git clone https://github.com/mthzo/watchdog.git
     cd watchdog
     ```
 2.  **Instale as dependências:**
