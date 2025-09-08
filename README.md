@@ -38,6 +38,19 @@ Ao final da execução de cada runbook, a ferramenta oferece a opção de gerar 
 
 Certifique-se de ter o Python 3.6 ou superior instalado em seu sistema.
 
+### Instalação
+
+1.  **Clone o repositório:**
+    ```bash
+    git clone [https://github.com/mthzo/watchdog.git](https://github.com/mthzo/watchdog.git)
+    cd watchdog
+    ```
+2.  **Instale as dependências:**
+    O projeto utiliza a biblioteca `fpdf2` para a geração de relatórios em PDF. Instale-a usando o `pip`:
+    ```bash
+    pip install fpdf2
+    ```
+
 ### Configuração do Ambiente Virtual
 
 É **altamente recomendado** usar um ambiente virtual para gerenciar as dependências do projeto. Isso evita conflitos com outras bibliotecas instaladas em seu sistema.
@@ -70,3 +83,31 @@ Certifique-se de ter o Python 3.6 ou superior instalado em seu sistema.
 Com o ambiente virtual ativo, instale a biblioteca `fpdf2` para a geração de relatórios em PDF.
 ```bash
 pip install fpdf2
+```
+
+### Como Executar
+
+1. Execute o script principal diretamente do terminal (com o ambiente virtual ativo):
+
+```bash
+python watchdog.py
+```
+
+2. Siga as instruções do menu para selecionar e executar um dos runbooks disponíveis.
+
+## Contribuição
+
+Sinta-se à vontade para contribuir com este projeto, seja adicionando novos runbooks, aprimorando a interface ou corrigindo bugs.
+
+**Faça um fork do projeto.**
+
+Crie uma nova branch para a sua feature (git checkout -b feature/minha-nova-feature).
+
+Faça o commit das suas alterações (git commit -m 'feat: adicionando nova funcionalidade').
+
+Envie suas alterações (git push origin feature/minha-nova-feature).
+
+**Abra um Pull Request.**
+
+## Licença
+Este projeto está sob a licença MIT License.
