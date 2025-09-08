@@ -1,16 +1,7 @@
 # WatchDog: Sistema de Resposta a Incidentes (Runbook CLI)
 
 <div align="center">
-    <pre>
-     _    _       _       _    ______            
-    | |  | |     | |     | |   |  _  \           
-    | |  | | __ _| |_ ___| |__ | | | |___   __ _ 
-    | |/\| |/ _` | __/ __| '_ \| | | / _ \ / _` |
-    \  /\  / (_| | || (__| | | | |/ / (_) | (_| |
-     \/  \/ \__,_|\__\___|_| |_|___/ \___/ \__, |
-                                            __/ |
-                                           |___/ 
-    </pre>
+  <img src="assets/dog.png" alt="Logo do Projeto WatchDog" width="352"/>
 </div>
 
 ## Descrição do Projeto
