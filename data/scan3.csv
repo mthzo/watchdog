@@ -1,0 +1,3 @@
+Created at,Id,Verbose verdict,Origin,Sample type str,Sample title,Sample from,Sample to,Sample sha256,Sample original message id,Sample source ip
+2025-05-16T00:28:37.708489,71a6cf44,MAL,email,email,Join TAQA’s Global Network of Suppliers,TAQA T&D Group <anon_user@domain.local>,anon_user@domain.local,d57693bd309f21ee5b0e805f6bbb16e76dca87bda023009a4661d4e4307b6d1c,9ef4aa24,d87a16fda85a
+2025-05-15T19:12:29.266403,6fc9116e,MAL,email,email,Pesquisa de Preços,MC/Coordenação-Geral de Gestão de Dados e Informação <anon_user@domain.local>,anon_user@domain.local,10417001a761d277aa05694a95cf6c0171858923575793bf48b2adcba92615f6,5db9bbaa,73fc77b5587c
