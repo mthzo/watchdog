@@ -1,9 +1,9 @@
-import os
-from fpdf import FPDF
 from datetime import datetime
+from fpdf import FPDF
+import os
 
 # Define a arte ASCII para o cabeçalho do relatório
-WATCHDOG_LOGO_ASCII = """
+WATCHDOG_LOGO_ASCII = r"""
  _    _       _       _    ______            
 | |  | |     | |     | |   |  _  \           
 | |  | | __ _| |_ ___| |__ | | | |___   __ _ 
@@ -77,6 +77,7 @@ class PDFReport(FPDF):
         self.ln()
 
 def generate_report(content, threat_name, runbook_name_full):
+    """Gera um relatório em PDF com os detalhes da execução do runbook."""
     reports_dir = "reports"
     if not os.path.exists(reports_dir):
         os.makedirs(reports_dir)
@@ -95,3 +96,7 @@ def generate_report(content, threat_name, runbook_name_full):
     
     pdf.output(filename)
     print(f"\nRelatório gerado com sucesso: {filename}")
+
+def clear_screen():
+    """Limpa a tela do terminal."""
+    os.system('cls' if os.name == 'nt' else 'clear')

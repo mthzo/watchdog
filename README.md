@@ -6,12 +6,14 @@
 
 ## Descrição do Projeto
 
-O **WatchDog** é uma ferramenta de linha de comando (CLI) desenvolvida em Python para auxiliar analistas de segurança em um Centro de Operações de Segurança (SOC) na resposta a incidentes. O projeto tem como objetivo principal demonstrar a criação e a execução de **runbooks** – guias passo a passo para mitigar ameaças cibernéticas.
+O **WatchDog** é uma ferramenta de linha de comando (CLI) desenvolvida em Python para auxiliar analistas de segurança em um Centro de Operações de Segurança (SOC) na resposta a incidentes.
+O projeto tem como objetivo principal demonstrar a execução de **runbooks** e também sua criação automática, através do Google Gemini.
+Além disso, o projeto disponibiliza um módulo de análise de logs para detecção de ameaças.
 
-A ferramenta é modular e extensível. Ela carrega dinamicamente runbooks que são scripts Python independentes, permitindo que a equipe de segurança crie e adicione novos guias de resposta de acordo com as ameaças que surgirem. Atualmente, o WatchDog inclui runbooks para as seguintes ameaças:
+A ferramenta é modular e extensível. Ela carrega dinamicamente runbooks que são scripts Python independentes, permitindo que a equipe de segurança crie e adicione novos guias de resposta de acordo com as ameaças que surgirem.
+Para efeito de demonstração, atualmente o WatchDog inclui runbook para a seguinte ameaça:
 
--   **Phishing:** Resposta a incidentes de e-mails maliciosos com anexos.
--   **Hacking:** Resposta a atividades de pós-exploração, como o uso de ferramentas de hacking em um endpoint.
+-   **XWorm:** Remote Access Trojan (RAT) desenvolvido em .NET, vendido em fóruns de cibercrime.
 
 Ao final da execução de cada runbook, a ferramenta oferece a opção de gerar um relatório detalhado em formato PDF, consolidando as ações tomadas durante o processo de mitigação.
 
@@ -20,6 +22,8 @@ Ao final da execução de cada runbook, a ferramenta oferece a opção de gerar 
 -   **Menu Interativo:** Interface de linha de comando intuitiva para navegação.
 -   **Runbooks Modulares:** Capacidade de adicionar novos runbooks facilmente.
 -   **Guias Passo a Passo:** Conduz o analista de segurança por cada etapa da resposta a um incidente.
+-   **Análise de Logs x Indicadores (IoC):** Correlaciona indicadores de ameaça com logs de detecção e e-mail para identificar ameaças.
+-   **Geração de Runbooks por IA:** Utiliza a API do Google Gemini para criar novos runbooks automaticamente.
 -   **Geração de Relatórios:** Criação de um relatório em PDF com o registro das ações e o resultado da execução.
 -   **Foco em Processo:** O projeto prioriza a lógica de um fluxo de trabalho de resposta a incidentes, sem a necessidade de infraestrutura complexa ou bancos de dados.
 
@@ -35,11 +39,6 @@ Certifique-se de ter o Python 3.6 ou superior instalado em seu sistema.
     ```bash
     git clone https://github.com/mthzo/watchdog.git
     cd watchdog
-    ```
-2.  **Instale as dependências:**
-    O projeto utiliza a biblioteca `fpdf2` para a geração de relatórios em PDF. Instale-a usando o `pip`:
-    ```bash
-    pip install fpdf2
     ```
 
 ### Configuração do Ambiente Virtual
@@ -71,10 +70,26 @@ Certifique-se de ter o Python 3.6 ou superior instalado em seu sistema.
 
 ### Instalação de Dependências
 
-Com o ambiente virtual ativo, instale a biblioteca `fpdf2` para a geração de relatórios em PDF.
+Com o ambiente virtual ativo, instale as bibliotecas abaixo:
 ```bash
-pip install fpdf2
+pip install pandas fpdf2 python-dotenv google-generativeai
 ```
+
+### Configuração Google Gemini
+
+Para usar a funcionalidade de geração de runbooks por IA, você precisará de uma **chave de API para o Google Gemini**.
+
+1.  **Obtenha sua chave de API**: Acesse o [Google AI Studio](https://aistudio.google.com/app/apikey), faça login com sua conta Google e gere uma nova chave de API.
+
+2.  **Crie um arquivo** `.env`: Na pasta raiz do projeto, crie um arquivo chamado `.env`.
+
+3.  **Adicione a chave de API**: Dentro do arquivo `.env`, adicione sua chave no seguinte formato:
+    ```bash
+    GEMINI_API_KEY="SUA_CHAVE_DE_API_AQUI"
+    ```
+    Substitua `"SUA_CHAVE_DE_API_AQUI"` pela sua chave real.
+
+    **Importante:** O arquivo `.env` deve ser ignorado pelo Git para garantir que sua chave de API não seja exposta. Certifique-se de que a linha `.env` esteja presente em seu arquivo `.gitignore`.
 
 ### Como Executar
 
@@ -84,7 +99,7 @@ pip install fpdf2
 python watchdog.py
 ```
 
-2. Siga as instruções do menu para selecionar e executar um dos runbooks disponíveis.
+2. Siga as instruções do menu para selecionar a funcionalidade que deseja usar.
 
 ## Contribuição
 
